@@ -44,6 +44,7 @@
             justify-content: space-around;
             border-bottom: 4px solid #ffcc00;
             margin-bottom: 20px;
+            padding-right: 70px;
             position: relative;
         }
 
@@ -318,6 +319,24 @@
         </audio>
     </div>
 
+    <div class="album">
+        <img src="albumoldtime.png" alt="Album 5">
+        <h3>No Time</h3>
+        <div class="custom-audio">
+            <button id="playPause5">▶️</button>
+            <span class="time" id="currentTime5">0:00</span>
+            <input type="range" id="seekBar5" value="0" max="100">
+            <div class="volume-control">
+                <span>🔊</span>
+                <input type="range" id="volumeControl5" value="100" min="0" max="100">
+            </div>
+        </div>
+        <audio id="audio5">
+            <source src="prodBarilletOldTime.mp3" type="audio/mp3">
+            Votre navigateur ne supporte pas la balise audio.
+        </audio>
+    </div>
+
     <!-- Répétez ce bloc jusqu'à 12 emplacements -->
 </section>
 
@@ -332,6 +351,7 @@
         { audio: document.getElementById('audio2'), playPauseButton: document.getElementById('playPause2'), currentTime: document.getElementById('currentTime2'), seekBar: document.getElementById('seekBar2'), volumeControl: document.getElementById('volumeControl2') },
         { audio: document.getElementById('audio3'), playPauseButton: document.getElementById('playPause3'), currentTime: document.getElementById('currentTime3'), seekBar: document.getElementById('seekBar3'), volumeControl: document.getElementById('volumeControl3') },
         { audio: document.getElementById('audio4'), playPauseButton: document.getElementById('playPause4'), currentTime: document.getElementById('currentTime4'), seekBar: document.getElementById('seekBar4'), volumeControl: document.getElementById('volumeControl4') },
+        { audio: document.getElementById('audio5'), playPauseButton: document.getElementById('playPause5'), currentTime: document.getElementById('currentTime5'), seekBar: document.getElementById('seekBar5'), volumeControl: document.getElementById('volumeControl5') },
     ];
 
     albums.forEach((album, index) => {
