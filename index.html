@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio de Musique - Purple Beats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #1d1d1d;
+            border-bottom: 4px solid #ffcc00;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        .bio {
+            text-align: center;
+            margin: 100px;
+            padding: 20px;
+            padding-left: 300px;
+            padding-right: 300px;
+            background-color: #1d1d1d;
+            border-bottom: 4px solid #ffcc00;
+        }
+
+        .upcoming-releases {
+            background-color: #292929;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 4px solid #ffcc00;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .release {
+            text-align: center;
+            width: 30%;
+        }
+
+        .release img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .release h3 {
+            font-size: 1.3em;
+            margin: 10px 0;
+        }
+
+        .release p {
+            margin: 0;
+            font-size: 1.1em;
+            color: #ffcc00;
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Limite à 4 colonnes */
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .album {
+            background-color: #1d1d1d;
+            border: 2px solid #ffcc00;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .album:hover {
+            transform: scale(1.05);
+        }
+
+        .album img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .album h3 {
+            margin-top: 15px;
+            font-size: 1.5em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1d1d1d;
+            border-top: 4px solid #ffcc00;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        /* Style des icônes dans chaque coin */
+        .icon-corner {
+            font-size: 40px;
+            color: #ffcc00;
+            position: absolute;
+        }
+
+        .icon-top-left {
+            top: 0;
+            left: 0;
+            transform: rotate(45deg); /* Ajustement d'orientation */
+        }
+
+        .icon-top-right {
+            top: 0;
+            right: 0;
+            transform: scaleY(-1) rotate(230deg);
+            /* color: blue; Possibilité de changer la couleur */
+        }
+
+        .icon-bottom-left {
+            bottom: 0;
+            left: 0;
+            transform: rotate(-45deg); /* Ajustement d'orientation */
+        }
+
+        .icon-bottom-right {
+            bottom: 0;
+            right: 0;
+            transform: scaleY(-1) rotate(-230deg);
+        }
+
+        /* Responsive: Si l'écran est plus petit que 768px, réduire à 2 colonnes */
+        @media (max-width: 768px) {
+            .album-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Responsive: Si l'écran est encore plus petit que 480px, réduire à 1 colonne */
+        @media (max-width: 480px) {
+            .album-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .custom-audio {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black; /* Fond rouge */
+            padding: 10px;
+            border-radius: 10px;
+            width: 95%;
+        }
+
+        .custom-audio button {
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            color: yellow; /* Boutons et texte verts */
+            cursor: pointer;
+        }
+
+        .custom-audio button:hover {
+            color: lime;
+        }
+
+        .custom-audio input[type="range"] {
+            width: 100%;
+            margin: 0 10px;
+            background-color: black;
+            cursor: pointer;
+        }
+
+        .custom-audio .time {
+            color: yellow; /* Texte de temps vert */
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+        }
+
+        .volume-control input {
+            margin-left: 10px;
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Studio de Musique - HaDoCk Music</h1>
+</header>
+
+<!-- Upcoming Releases Section avec icônes d'armes -->
+<section class="upcoming-releases">
+    <a href="page2.html"><i class="fas fa-gun icon-corner icon-top-left"></i></a>
+    <i class="fas fa-gun icon-corner icon-top-right"></i>
+    <i class="fas fa-gun icon-corner icon-bottom-left"></i>
+    <i class="fas fa-gun icon-corner icon-bottom-right"></i>
+
+    <div class="release">
+        <img src="adp.jpg" alt="Album 1">
+        <h3>Sortie du son "Boombox"</h3>
+        <p>30 octobre 2024</p>
+    </div>
+    <div class="release">
+        <img src="adp.jpg" alt="Album 2">
+        <h3>Sortie du son "Hood Symphony"</h3>
+        <p>18 novembre 2024</p>
+    </div>
+    <div class="release">
+        <img src="adp.jpg" alt="Album 3">
+        <h3>Sortie du son "Trap Dreams"</h3>
+        <p>16 décembre 2024</p>
+    </div>
+</section>
+<div class="bio"><h1>Qui suis-je ?</h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis tenetur expedita, dolor iure quaerat iste quod tempore deleniti quo nemo, eos illum laboriosam repellendus fugit illo quos praesentium at laudantium.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi ad eum, aperiam provident, odio dignissimos id ratione nulla, sapiente natus fuga! Distinctio laboriosam cum magni minima fugit quod, adipisci modi?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore molestiae, eos accusantium nostrum reprehenderit recusandae laboriosam inventore illum dolorem sapiente iste asperiores voluptatibus nesciunt, debitis voluptates aut voluptatem. Odio, deserunt!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis tenetur expedita, dolor iure quaerat iste quod tempore deleniti quo nemo, eos illum laboriosam repellendus fugit illo quos praesentium at laudantium.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi ad eum, aperiam provident, odio dignissimos id ratione nulla, sapiente natus fuga! Distinctio laboriosam cum magni minima fugit quod, adipisci modi?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore molestiae, eos accusantium nostrum reprehenderit recusandae laboriosam inventore illum dolorem sapiente iste asperiores voluptatibus nesciunt, debitis voluptates aut voluptatem. Odio, deserunt!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis tenetur expedita, dolor iure quaerat iste quod tempore deleniti quo nemo, eos illum laboriosam repellendus fugit illo quos praesentium at laudantium.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi ad eum, aperiam provident, odio dignissimos id ratione nulla, sapiente natus fuga! Distinctio laboriosam cum magni minima fugit quod, adipisci modi?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore molestiae, eos accusantium nostrum reprehenderit recusandae laboriosam inventore illum dolorem sapiente iste asperiores voluptatibus nesciunt, debitis voluptates aut voluptatem. Odio, deserunt!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis tenetur expedita, dolor iure quaerat iste quod tempore deleniti quo nemo, eos illum laboriosam repellendus fugit illo quos praesentium at laudantium.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi ad eum, aperiam provident, odio dignissimos id ratione nulla, sapiente natus fuga! Distinctio laboriosam cum magni minima fugit quod, adipisci modi?
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore molestiae, eos accusantium nostrum reprehenderit recusandae laboriosam inventore illum dolorem sapiente iste asperiores voluptatibus nesciunt, debitis voluptates aut voluptatem. Odio, deserunt!
+</div>
+
+<section class="album-grid">
+    <!-- 12 albums à dupliquer -->
+    <div class="album">
+        <img src="albumak47.png" alt="Album 1">
+        <h3>AK 47</h3>
+        <div class="custom-audio">
+            <button id="playPause1">▶️</button>
+            <span class="time" id="currentTime1">0:00</span>
+            <input type="range" id="seekBar1" value="0" max="100">
+            <div class="volume-control">
+                <span>🔊</span>
+                <input type="range" id="volumeControl1" value="100" min="0" max="100">
+            </div>
+        </div>
+        <audio id="audio1">
+            <source src="audio.mp3" type="audio/mp3">
+            Votre navigateur ne supporte pas la balise audio.
+        </audio>
+    </div>
+
+    <div class="album">
+        <img src="albumenfullcrack.png" alt="Album 2">
+        <h3>En full Crack ( modifier font )</h3>
+        <div class="custom-audio">
+            <button id="playPause2">▶️</button>
+            <span class="time" id="currentTime2">0:00</span>
+            <input type="range" id="seekBar2" value="0" max="100">
+            <div class="volume-control">
+                <span>🔊</span>
+                <input type="range" id="volumeControl2" value="100" min="0" max="100">
+            </div>
+        </div>
+        <audio id="audio2">
+            <source src="albumjnr.mp3" type="audio/mp3">
+            Votre navigateur ne supporte pas la balise audio.
+        </audio>
+    </div>
+
+    <div class="album">
+        <img src="albumbilly.png" alt="Album 3">
+        <h3>Billy</h3>
+        <div class="custom-audio">
+            <button id="playPause3">▶️</button>
+            <span class="time" id="currentTime3">0:00</span>
+            <input type="range" id="seekBar3" value="0" max="100">
+            <div class="volume-control">
+                <span>🔊</span>
+                <input type="range" id="volumeControl3" value="100" min="0" max="100">
+            </div>
+        </div>
+        <audio id="audio3">
+            <source src="albumbluzz.mp3" type="audio/mp3">
+            Votre navigateur ne supporte pas la balise audio.
+        </audio>
+    </div>
+
+    <div class="album">
+        <img src="albumnotime.png" alt="Album 4">
+        <h3>No Time</h3>
+        <div class="custom-audio">
+            <button id="playPause4">▶️</button>
+            <span class="time" id="currentTime3">0:00</span>
+            <input type="range" id="seekBar4" value="0" max="100">
+            <div class="volume-control">
+                <span>🔊</span>
+                <input type="range" id="volumeControl4" value="100" min="0" max="100">
+            </div>
+        </div>
+        <audio id="audio4">
+            <source src="albumtikoko.mp3" type="audio/mp3">
+            Votre navigateur ne supporte pas la balise audio.
+        </audio>
+    </div>
+
+    <!-- Répétez ce bloc jusqu'à 12 emplacements -->
+</section>
+
+<footer>
+    <p>&copy; 2024 HaDoCk Music. Tous droits réservés.</p>
+</footer>
+
+<script>
+    // Code JavaScript pour la gestion des boutons de lecture, barre de recherche et volume
+    const albums = [
+        { audio: document.getElementById('audio1'), playPauseButton: document.getElementById('playPause1'), currentTime: document.getElementById('currentTime1'), seekBar: document.getElementById('seekBar1'), volumeControl: document.getElementById('volumeControl1') },
+        { audio: document.getElementById('audio2'), playPauseButton: document.getElementById('playPause2'), currentTime: document.getElementById('currentTime2'), seekBar: document.getElementById('seekBar2'), volumeControl: document.getElementById('volumeControl2') },
+        { audio: document.getElementById('audio3'), playPauseButton: document.getElementById('playPause3'), currentTime: document.getElementById('currentTime3'), seekBar: document.getElementById('seekBar3'), volumeControl: document.getElementById('volumeControl3') },
+        { audio: document.getElementById('audio4'), playPauseButton: document.getElementById('playPause4'), currentTime: document.getElementById('currentTime4'), seekBar: document.getElementById('seekBar4'), volumeControl: document.getElementById('volumeControl4') },
+    ];
+
+    albums.forEach((album, index) => {
+        let isPlaying = false;
+
+        album.playPauseButton.addEventListener('click', () => {
+            if (isPlaying) {
+                album.audio.pause();
+                album.playPauseButton.textContent = '▶️';
+            } else {
+                album.audio.play();
+                album.playPauseButton.textContent = '⏸️';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        album.audio.addEventListener('timeupdate', () => {
+            const currentTime = Math.floor(album.audio.currentTime);
+            const minutes = Math.floor(currentTime / 60);
+            const seconds = currentTime % 60;
+            album.currentTime.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            album.seekBar.value = (album.audio.currentTime / album.audio.duration) * 100 || 0;
+        });
+
+        album.seekBar.addEventListener('input', () => {
+            const seekTime = (album.seekBar.value / 100) * album.audio.duration;
+            album.audio.currentTime = seekTime;
+        });
+
+        album.volumeControl.addEventListener('input', () => {
+            album.audio.volume = album.volumeControl.value / 100;
+        });
+    });
+</script>
+
+</body>
+</html>
